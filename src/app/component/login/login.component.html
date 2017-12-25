@@ -1,0 +1,15 @@
+<div class="mid-width"> <mat-card class="bottom-padded-card">
+  <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+
+        <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <mat-input-container class="full-width">
+            <input matInput formControlName="username" required placeholder="user/admin">
+          </mat-input-container>
+          <mat-input-container class="full-width">
+            <input matInput formControlName="password" required type="password" placeholder="123">
+          </mat-input-container>
+          <button type="submit" [disabled]="!loginForm.form.valid" mat-raised-button color="primary">Login</button>
+        </form>
+        <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+      </mat-card>
+</div>

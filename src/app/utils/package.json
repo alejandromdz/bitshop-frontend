@@ -1,0 +1,98 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@tsmean/utils@^1.1.1",
+        "scope": "@tsmean",
+        "escapedName": "@tsmean%2futils",
+        "name": "@tsmean/utils",
+        "rawSpec": "^1.1.1",
+        "spec": ">=1.1.1 <2.0.0",
+        "type": "range"
+      },
+      "/Users/erikbrisson/Desktop/app/app-frontend/frontend/main"
+    ]
+  ],
+  "_from": "@tsmean/utils@>=1.1.1 <2.0.0",
+  "_id": "@tsmean/utils@1.1.3",
+  "_inCache": true,
+  "_location": "/@tsmean/utils",
+  "_nodeVersion": "6.11.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/utils-1.1.3.tgz_1499408958809_0.3835162988398224"
+  },
+  "_npmUser": {
+    "name": "bersling",
+    "email": "bersling@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@tsmean/utils@^1.1.1",
+    "scope": "@tsmean",
+    "escapedName": "@tsmean%2futils",
+    "name": "@tsmean/utils",
+    "rawSpec": "^1.1.1",
+    "spec": ">=1.1.1 <2.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/",
+    "/@tsmean/hero"
+  ],
+  "_resolved": "https://registry.npmjs.org/@tsmean/utils/-/utils-1.1.3.tgz",
+  "_shasum": "bf69cde5a41ef8dfd7644c3a978f6f37522cbcc3",
+  "_shrinkwrap": null,
+  "_spec": "@tsmean/utils@^1.1.1",
+  "_where": "/Users/erikbrisson/Desktop/app/app-frontend/frontend/main",
+  "author": {
+    "name": "bersling@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/bersling/utils/issues"
+  },
+  "dependencies": {},
+  "description": "A library of pure utility functions",
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/mocha": "^2.2.41",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "ts-node": "^3.1.0",
+    "typescript": "^2.4.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "bf69cde5a41ef8dfd7644c3a978f6f37522cbcc3",
+    "tarball": "https://registry.npmjs.org/@tsmean/utils/-/utils-1.1.3.tgz"
+  },
+  "gitHead": "3085fe748b6b61ff8533170f6044c730b02b8a14",
+  "homepage": "https://github.com/bersling/utils#readme",
+  "keywords": [
+    "pure",
+    "utils",
+    "tsmean"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "maintainers": [
+    {
+      "name": "bersling",
+      "email": "bersling@gmail.com"
+    }
+  ],
+  "name": "@tsmean/utils",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bersling/utils.git"
+  },
+  "scripts": {
+    "pub": "tsc && git add --all && git commit -m update && npm version patch && npm publish && git push",
+    "test": "mocha --reporter spec --compilers ts:ts-node/register 'src/**/*.test.ts'"
+  },
+  "types": "dist/index.d.ts",
+  "version": "1.1.3"
+}

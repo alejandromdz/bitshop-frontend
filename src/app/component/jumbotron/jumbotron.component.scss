@@ -1,0 +1,69 @@
+@import '../../../variables';
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+$carousel-count: 5;
+$carousel-height:45px;
+$carousel-width:200px;
+.app-jumbotron {
+    min-height: 100vh;
+    background-image: url('/assets/img/AviaPark_Moscow.jpeg');
+    background-size: auto 140%;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    font-family: Lato;
+}
+
+.jumbo-image {
+    padding: 20px;
+}
+
+#carousel{
+    height:$carousel-height;
+    width:$carousel-width;
+    overflow:hidden;
+    position:relative;
+    margin:0 auto;
+    display:inline-flex;
+    border:white 3px dashed;
+    ul
+    {
+        list-style-type: none;
+        display:flex;
+        flex-direction: column;
+        padding:0px;
+        margin:0px;
+        position: absolute; 
+        animation: slide 25s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+        li
+        {
+            display:flex;
+            align-items: center;
+            justify-content:center;
+            width:$carousel-width;
+            height: $carousel-height;
+            padding-bottom:15px;
+        }
+    }
+}
+
+.custom-entry{
+    background-color: $custom-entry;
+    color:white;
+}
+
+@keyframes slide{
+    @for $i from 0 through $carousel-count{
+        $percent: 20% * $i;
+        #{$percent} { 
+            top:0px - $i*$carousel-height;
+        }
+    }
+}
+
+

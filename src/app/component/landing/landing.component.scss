@@ -1,0 +1,20 @@
+@import '../../../variables';
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.section-type-one {
+    background: $footer-background;
+    color: #F5F5F5;
+    font-family: Lato;
+}
+
+.section-type-two {
+    padding: 20px 0;
+}
+
+.image-title-text-section {
+    padding: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

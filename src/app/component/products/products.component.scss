@@ -1,0 +1,14 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.example-card {
+    width: 400px;
+    margin:30px;
+  }
+  
+  .example-header-image {
+    background-image: url(https://cdn.worldvectorlogo.com/logos/fender-1.svg);
+    background-size: contain;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+  }
