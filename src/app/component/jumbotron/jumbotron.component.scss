@@ -1,4 +1,4 @@
-@import '../../../variables';
+@import 'variables';
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 $carousel-count: 5;
@@ -16,7 +16,9 @@ $carousel-width:200px;
     flex-direction: column;
     text-align: center;
     padding: 10px;
+    h1.center{
     font-family: Lato;
+    }
 }
 
 .jumbo-image {

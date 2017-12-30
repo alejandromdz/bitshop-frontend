@@ -1,0 +1,14 @@
+<div class="stage" [ngClass]="{'faded':isToggled}">
+        <div class="cell">
+          <div class="searchbar" [ngClass]="{'clicked':isToggled}">
+            <input type="text"  (keyup.enter)='doSearch()' class="btn-extended" placeholder="search" [(ngModel)]='searchString'/>
+            <div class="btn-search" (click)='doSearch()'></div>  
+          </div>
+        </div>
+
+      <div class="product-container" >    
+          <products *ngFor="let pub of publications" [publication]="pub"></products>
+      </div>
+    
+</div>
+      

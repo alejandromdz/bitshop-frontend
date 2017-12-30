@@ -11,6 +11,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatCardModule,
+  MatChipsModule,
   MatInputModule,
   MatIconRegistry,
   MatProgressSpinnerModule,
@@ -18,6 +19,18 @@ import {
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { 
+  NbThemeModule,
+  NbSidebarModule, 
+  NbLayoutModule, 
+  NbSidebarService,
+  NbMenuService,
+  NbMenuModule,
+  
+  
+} from '@nebular/theme';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app-routing.module';
 import {
@@ -30,10 +43,14 @@ import {
   ProductComponent,
   ProfileComponent,
   PurchasesComponent,
+  SearchMain,
   SidemenuComponent,
   SignUpComponent,
   SpacerComponent,
-  TopnavComponent
+  TopnavComponent,
+  PaymentDashboardComponent,
+  ProductDashboardComponent,
+  PurchaseDashboardComponent
 } from './component';
 
 
@@ -41,9 +58,10 @@ import {
   ApiService,
   AuthService,
   UserService,
-  FooService,
-  ConfigService
+  ConfigService,
+  StateService
 } from './service';
+import { NbMenuInternalService } from '@nebular/theme/components/menu/menu.service';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -61,15 +79,24 @@ export function initUserFactory(userService: UserService) {
     ProductComponent,
     ProfileComponent,
     PurchasesComponent,
+    SearchMain,
     SidemenuComponent,
     SignUpComponent,
     SpacerComponent,
     TopnavComponent,
+    PaymentDashboardComponent,
+    ProductDashboardComponent,
+    PurchaseDashboardComponent,
 
     AppComponent,
     
   ],
   imports: [
+    NgbModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbSidebarModule,
+    NbMenuModule,
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
@@ -80,6 +107,7 @@ export function initUserFactory(userService: UserService) {
     MatMenuModule,
     MatTooltipModule,
     MatButtonModule,
+    MatChipsModule,
     MatIconModule,
     MatInputModule,
     MatToolbarModule,
@@ -89,11 +117,14 @@ export function initUserFactory(userService: UserService) {
     FlexLayoutModule
   ],
   providers: [
-    FooService,
+    NbSidebarService,
+    NbMenuInternalService,
+    NbMenuService,
     AuthService,
     ApiService,
     UserService,
     ConfigService,
+    StateService,
     MatIconRegistry,
     {
       'provide': APP_INITIALIZER,

@@ -1,8 +1,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 .example-card {
-    width: 400px;
-    margin:30px;
+    max-width: 400px;
   }
   
   .example-header-image {
@@ -11,4 +10,9 @@
     background-position-y: center;
     background-position-x: center;
     background-repeat: no-repeat;
+  }
+
+  mat-card img {
+    width: 100%;
+    height: auto;
   }

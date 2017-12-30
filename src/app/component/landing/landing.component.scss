@@ -1,14 +1,15 @@
-@import '../../../variables';
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import 'variables';
 
-.section-type-one {
-    background: $footer-background;
-    color: #F5F5F5;
+
+.section {
+    
     font-family: Lato;
 }
-
-.section-type-two {
-    padding: 20px 0;
+.section-type-one {
+    @extend .section;
+    padding: 20px 0 60px;
+    background: $blue-dark;
+    color: #F5F5F5;
 }
 
 .image-title-text-section {

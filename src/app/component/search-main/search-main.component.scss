@@ -1,0 +1,110 @@
+@import 'variables'; 
+$searchRadius:30px;
+$searchWidth:250px;
+
+.stage{
+    
+    background-color: $search-color-1;
+    margin: -35px 0 0;
+    height:100%;
+    padding: 40px 0;
+    transition: all 0.3s ease-in-out;
+  
+  &.faded{
+    background-color:  $search-color-2;
+  }
+
+ 
+}
+.product-container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center 
+  products{
+    flex-grow: 1;
+    
+  }
+}
+
+.searchbar{
+  position: relative;
+  top: -40px;
+  &.clicked{
+
+    .btn-search{
+      border-radius: 0 $searchRadius $searchRadius 0;
+      margin-left: 115px;
+    }
+    .btn-extended{
+      margin-left: -125px;
+      width: $searchWidth;
+      padding: 20px 30px;
+      opacity: 1;
+      border-radius: $searchRadius 0 0 $searchRadius;
+    }
+  }
+  
+  .btn-search{
+    position: absolute;
+    background-color: $blue-dark;
+    color: white;
+    width : 2*$searchRadius; 
+    height: 2*$searchRadius;
+    left: 50%; 
+    top: 50%;  
+    margin-left: -35px;
+    margin-top:  -35px;
+    border-radius: $searchRadius;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    border: 5px solid $search-color-1;
+
+    &:before{
+      position: absolute;
+      content:'';
+      display: block;
+      top: 12px;
+      left: 14px;
+      width: 15px; 
+      height: 15px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 0px 3px #fff;
+    }
+
+      &:after{
+        content: "";
+        position: absolute;
+        width: 15px; 
+        height: 4px;
+        top: 30px;
+        left: 27px;
+        background-color: #fff;
+        transform: rotateZ(45deg);
+        border-radius: 3px;
+        
+      }
+    
+
+  }
+  
+  .btn-extended{
+    position: absolute;
+    width: 0px; 
+    height: 2*$searchRadius;
+    left: 50%;  margin-left: 35px;
+    top: 50%;   margin-top:  -35px;
+    border-radius: $searchRadius;
+    padding: 0;
+    font-size: 16px;
+    border: none;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    
+    
+    &:focus{
+      outline-width: 0px;
+    }
+  }
+  
+}

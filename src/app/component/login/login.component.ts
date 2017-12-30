@@ -1,27 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {
-  UserService,
-  AuthService
-} from '../../service';
-import { DisplayMessage } from '../../shared/models/display-message';
+
+import { DisplayMessage,User } from 'app/shared/models'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/SUbject';
+import { Subject } from 'rxjs/Subject';
+import { UserService ,AuthService} from 'app/service';
 @Component({
   selector: 'user-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
-  user: {
-    email: string;
-    password: string;
-  } = {
-    email: '',
-    password: ''
-  };
+  user: User;
 
   form: FormGroup;
 
@@ -76,11 +68,12 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.form.value)
     .delay(1000)
-    .subscribe(data => {
+    .subscribe(
+    data => {
       this.userService.getMyInfo().subscribe();
       this.router.navigate([this.returnUrl]);
     },
-    error => {
+    e => {
       this.submitted = false;
       this.notification = { msgType: 'error', msgBody: 'Incorrect username or password.' };
     });

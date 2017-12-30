@@ -1,23 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, AuthService } from 'app/service';
+import { UserService, AuthService, ApiService, ConfigService } from 'app/service';
 import { Router, ActivatedRoute } from '@angular/router';
+import {MatChipList,MatChip} from '@angular/material'
 
 @Component({
   selector: 'app-topnav',
   templateUrl: './topnav.component.html',
-  styleUrls: ['./topnav.component.css']
+  styleUrls: ['./topnav.component.scss']
 })
 export class TopnavComponent implements OnInit {
   returnUrl:string;
+  BTC_USD:number;
   constructor(
     private userService: UserService,
     private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute,
+    private apiService: ApiService,
+    private config: ConfigService,
   ) { }
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-  
+    this.apiService.get(this.config.BTC_USD_API_url,null,{wihCredentials:false}).subscribe((json:any)=>{
+      if(json.USD&&json.USD.buy)
+      this.BTC_USD=json.USD.buy;
+    
+    })
   }
 
   loggedIn():boolean{

@@ -1,0 +1,35 @@
+@import 'variables';
+
+
+.signup-container{
+    width: 100%; 
+    margin-top:  -66px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    //fallback
+    background: $form-gradient-2;
+    background: linear-gradient(to right, $form-gradient-1, $form-gradient-2);
+    mat-card{
+        max-width:500px;
+    }
+  
+    .signup-header{
+        font-family: Lato;
+    }
+
+    .signup-button{
+        background: $form-button;
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 49%;
+}
+
+

@@ -1,0 +1,61 @@
+@import 'variables';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.topnav {
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.bs-topnav {
+    background: $primary-color;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.home-button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.navbar{
+    a,a:hover,a:active,a:focus,a:visited{
+        color:$primary-light;
+    }
+    
+}
+.conversion-container{
+    line-height: 40px;
+    display:flex;
+    flex-wrap: wrap;
+    .conversion{
+      font-family:$font-stack;
+      color:$conversion-text-color;
+      width:200px;
+      border: 1px solid black;
+      border-radius: 30px;
+      padding: 4px;
+      padding-left: 10px;
+      mat-chip-list{
+            display:inline-block;
+            .btc-chip{
+                background-color: $btc-chip;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .conversion-container{
+        z-index: 100;
+    } 
+    .collapse.navbar-collapse{
+        position: absolute;
+        left: -10px;
+    }
+}

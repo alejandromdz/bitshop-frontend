@@ -11,11 +11,12 @@ export class AuthGuardService implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    //redirected from backend
     return this.isAllowedOnState(state.url);
   }
 
   isAllowedOnState(url: string): boolean {
-    const forbiddenWhenLoggedOut = /(\/dashboard\/?.+|\/profile)/ig;
+    const forbiddenWhenLoggedOut = /(\/dashboard\/*.*|\/profile)/ig;
     const forbiddenWhenLoggedIn = ['/login', '/signup', '/'];
     const isLoggedIn = this.userService.loggedIn();
     if (isLoggedIn && forbiddenWhenLoggedIn.indexOf(url) > -1) {

@@ -5,24 +5,17 @@ import { environment } from '../../environments/environment';
 export class ConfigService {
 
   private _api_url = '/api'
-
   private _refresh_token_url = this._api_url + '/refresh';
-
   private _login_url = this._api_url + '/login';
-
   private _logout_url = this._api_url + '/logout';
-
+  private _signup_url = this._api_url + '/signup';
   private _change_password_url = this._api_url + '/changePassword';
-
   private _whoami_url = this._api_url + '/whoami';
+  private _users_url = this._api_url + '/user';
+  private _reset_credentials_url = this._users_url + '/reset-credentials';
+  private _publications_url=this._api_url+'/publication';
+  private _BTC_USD_API_url='https://blockchain.info/ticker?cors=true';
 
-  private _user_url = this._api_url + '/user';
-
-  private _users_url = this._user_url + '/all';
-
-  private _reset_credentials_url = this._user_url + '/reset-credentials';
-
-  private _foo_url = this._api_url + '/foo';
 
   get reset_credentials_url(): string {
       return this._reset_credentials_url;
@@ -52,8 +45,15 @@ export class ConfigService {
       return this._change_password_url;
   }
 
-  get foo_url(): string {
-      return this._foo_url;
+  get publications_url():string{
+      return this._publications_url;
   }
 
+  get BTC_USD_API_url():string{
+      return this._BTC_USD_API_url;
+  }
+
+  get signup_url():string{
+      return this._signup_url;
+  }
 }

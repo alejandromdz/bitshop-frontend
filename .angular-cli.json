@@ -19,15 +19,27 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.scss",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/ionicons/dist/scss/ionicons.scss",
+        "../node_modules/@nebular/theme/styles/prebuilt/default.css",
+        "../node_modules/nebular-icons/scss/nebular-icons.scss"
+        
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+       "stylePreprocessorOptions": {
+        "includePaths": [
+          "app/shared/scss/",
+          "../node_modules/nebular-icons/scss/"
+        
+        ]
     }
+  }
   ],
   "e2e": {
     "protractor": {

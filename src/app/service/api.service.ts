@@ -25,12 +25,13 @@ export class ApiService {
 
   constructor( private http: HttpClient) { }
 
-  get(path: string, args?: any): Observable<any> {
-    const options = {
-      headers: this.headers,
-      withCredentials: true
-    };
-
+  get(path: string, 
+      args?: any,
+      options:any={//default options value
+        headers: this.headers,
+        withCredentials: true}
+      ): Observable<any> {
+     
     if (args) {
       options['params'] = serialize(args);
     }

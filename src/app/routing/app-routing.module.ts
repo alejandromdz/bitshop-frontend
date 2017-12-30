@@ -1,18 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {
+  DashboardComponent,
+  JumbotronComponent,
+  LandingComponent,
+  LoginComponent,
+  PageNotFoundComponent,
+  PaymentsComponent,
+  ProductComponent,
+  ProfileComponent,
+  PurchasesComponent,
+  SearchMain,
+  SidemenuComponent,
+  SignUpComponent,
+  SpacerComponent,
+  TopnavComponent,
+  PaymentDashboardComponent,
+  ProductDashboardComponent,
+  PurchaseDashboardComponent
+} from 'app/component';
 
-import { AuthGuardService } from '../service/auth-guard.service'
+import { AuthGuardService } from 'app/service/auth-guard.service'
 
-import { LandingComponent } from '../component/landing/landing.component';
-import { PageNotFoundComponent } from '../component/page-not-found/page-not-found.component';
-import { DashboardComponent } from '../component/dashboard/dashboard.component';
-
-import { LoginComponent } from '../component/login/login.component';
-import { SignUpComponent } from '../component/sign-up/sign-up.component';
-import { ProfileComponent } from '../component/profile/profile.component';
-import { ProductComponent } from '../component/products/products.component'
-import { PaymentsComponent } from '../component/payments/payments.component';
-import { PurchasesComponent } from '../component/purchases/purchases.component';
 
 
 const appRoutes: Routes = [
@@ -24,10 +33,10 @@ const appRoutes: Routes = [
   {
     path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService],
     children: [
-      { path:'',redirectTo:'myproducts',pathMatch: 'full'},
-      { path: 'myproducts', component: ProductComponent  },
-      { path: 'mypayments', component: PaymentsComponent },
-      { path: 'mypurchases', component: PurchasesComponent },
+      //{ path:'',redirectTo:'myproducts',pathMatch: 'full'},
+      { path: 'myproducts', component: ProductDashboardComponent  },
+      { path: 'mypayments', component: PaymentDashboardComponent },
+      { path: 'mypurchases', component: PurchaseDashboardComponent },
       
     ]
   },

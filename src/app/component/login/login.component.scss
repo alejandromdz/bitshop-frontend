@@ -1,0 +1,41 @@
+@import 'variables';
+
+html,body{
+    height: 100%
+  }
+.app-page{
+    height: 100%;
+}
+
+.login-container
+{
+    width: 100%; 
+    margin-top:  -66px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    //fallback
+    background: $form-gradient-2;
+    background: linear-gradient(to right, $form-gradient-1, $form-gradient-2);
+    mat-card{
+        max-width:500px;
+        min-width: 200px;
+    }
+    .login-header{
+        font-family: Lato;
+    }
+
+    .login-button:not([disabled]){
+        background: $form-button;
+    }
+
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 49%;
+}

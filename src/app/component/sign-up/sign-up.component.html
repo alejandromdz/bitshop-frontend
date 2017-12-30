@@ -1,29 +1,29 @@
-<div style="max-width: 600px; margin: 0 auto;">
-  <mat-card class="bottom-padded-card">
+<div class="signup-container">
+    <mat-card *ngIf="!submitted">
+      <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
     
-    <h1>
-      Sign Up
-    </h1>
-  
-    <mat-input-container class="half-width">
-      <input matInput placeholder="First Name">
-    </mat-input-container>
-    <mat-input-container class="half-width">
-      <input matInput placeholder="Last Name">
-    </mat-input-container>
+      <h2 class="signup-header">
+        Sign Up
+      </h2>
     
-    <mat-input-container class="full-width">
-      <input matInput autocomplete="false" placeholder="Email">
-    </mat-input-container>
-    <mat-input-container class="full-width">
-      <input matInput autocomplete="new-password" type="password" placeholder="Password">
-    </mat-input-container>
-    
-    <div class="clearfix">
-      <div class="float-right">
-        <button  color="primary" mat-raised-button>Sign Up</button>
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="newUser.username" placeholder="Username">
+      </mat-form-field>
+     
+      
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="newUser.email" autocomplete="false" placeholder="Email">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="newUser.password" autocomplete="new-password" type="password" placeholder="Password">
+      </mat-form-field>
+      
+      <div class="clearfix">
+        <div class="float-right">
+          <button  class="signup-button" (click)="doSignUp()" color="primary" mat-raised-button>Sign Up</button>
+        </div>
       </div>
-    </div>
-    
-  </mat-card>
-</div>
+      
+    </mat-card>
+    <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+  </div>
