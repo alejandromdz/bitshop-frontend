@@ -1,0 +1,19 @@
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+.newpublication-container{
+    @include media-breakpoint-up(md) {
+        nb-card{
+            min-width: 400px;
+        }
+    }
+}
+.card{
+max-width:400px;
+position: relative;
+.close{
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+img{width: 100%;height: auto}
+}

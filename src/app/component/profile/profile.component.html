@@ -1,30 +1,35 @@
-<div style="max-width: 600px; margin: 0 auto;">
-  <mat-card class="bottom-padded-card">
-    
-    <h1>
-      User Profile
-    </h1>
-    
-    <p>
-      !!! Work in progress, currently displaying fake user !!!
-    </p>
-    
-    <mat-input-container class="half-width">
-      <input matInput  placeholder="First Name">
-    </mat-input-container>
-    <mat-input-container class="half-width">
-      <input matInput  placeholder="Last Name">
-    </mat-input-container>
-    
-    <mat-input-container class="full-width">
-      <input matInput  autocomplete="false" placeholder="Email">
-    </mat-input-container>
-    
-    <div class="clearfix">
-      <div class="float-right">
-        <button color="primary" mat-raised-button>Save Changes</button>
+<div class="profile-container d-flex justify-content-around">
+  <nb-card>
+    <nb-card-header>Profile</nb-card-header>
+    <nb-card-body>
+      
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputFirstName">First Name</label>
+            <input type="text" class="form-control" id="inputFirstName" [(ngModel)]='user.firstname' placeholder="First Name">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputLastName">Last Name</label>
+            <input type="text" class="form-control" id="inputLastName" [(ngModel)]='user.lastname' placeholder="Last Name">
+          </div>
+        </div>
       </div>
-    </div>
-  
-  </mat-card>
+        <div class="form-group">
+          <label for="inputUsername">Username</label>
+          <input type="text" class="form-control" id="inputUsername" [(ngModel)]='user.username' placeholder="Username" disabled>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Email address</label>
+          <input type="email" class="form-control" id="inputEmail" [(ngModel)]='user.email' placeholder="Email" disabled>
+        </div>
+        <button type="submit" class="btn btn-info btn-tn">Save</button>
+      
+    </nb-card-body>
+  </nb-card>
 </div>
+
+
+ 

@@ -1,0 +1,9 @@
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+.profile-container{
+    @include media-breakpoint-up(md) {
+        nb-card{
+            min-width: 400px;
+        }
+    }
+}

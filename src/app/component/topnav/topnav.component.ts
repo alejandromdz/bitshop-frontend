@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService, AuthService, ApiService, ConfigService } from 'app/service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {MatChipList,MatChip} from '@angular/material'
+import { NbSidebarService } from '@nebular/theme';
 
 @Component({
   selector: 'app-topnav',
@@ -18,6 +19,7 @@ export class TopnavComponent implements OnInit {
     private route: ActivatedRoute,
     private apiService: ApiService,
     private config: ConfigService,
+    private sidebarService:NbSidebarService
   ) { }
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -36,6 +38,10 @@ export class TopnavComponent implements OnInit {
     this.authService.logout().subscribe(()=>{
       this.router.navigate([this.returnUrl]);
     });
+  }
+
+  toggleSidebar(){
+    this.sidebarService.toggle(true, 'menu-sidebar');
   }
 
 }

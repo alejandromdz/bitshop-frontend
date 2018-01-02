@@ -3,7 +3,6 @@ import { NgModule, APP_INITIALIZER} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-// material
 import {
   MatButtonModule,
   MatMenuModule,
@@ -27,10 +26,10 @@ import {
   NbSidebarService,
   NbMenuService,
   NbMenuModule,
-  
+  NbCardModule,
+  NbCheckboxModule
   
 } from '@nebular/theme';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app-routing.module';
 import {
@@ -40,7 +39,7 @@ import {
   LoginComponent,
   PageNotFoundComponent,
   PaymentsComponent,
-  ProductComponent,
+  PublicationComponent,
   ProfileComponent,
   PurchasesComponent,
   SearchMain,
@@ -49,17 +48,21 @@ import {
   SpacerComponent,
   TopnavComponent,
   PaymentDashboardComponent,
-  ProductDashboardComponent,
-  PurchaseDashboardComponent
+  BrowseDashboardComponent,
+  PurchaseDashboardComponent,
+  ProfileDashboardComponent,
+  MypublicationsDashboardComponent,
+  NewpublicationDashboardComponent,
+  S3UploadComponent,
+  S3UploadDirective
 } from './component';
-
-
 import {
   ApiService,
   AuthService,
   UserService,
   ConfigService,
-  StateService
+  StateService,
+  S3UploadService
 } from './service';
 import { NbMenuInternalService } from '@nebular/theme/components/menu/menu.service';
 
@@ -76,7 +79,7 @@ export function initUserFactory(userService: UserService) {
     LoginComponent,
     PageNotFoundComponent,
     PaymentsComponent,
-    ProductComponent,
+    PublicationComponent,
     ProfileComponent,
     PurchasesComponent,
     SearchMain,
@@ -85,18 +88,26 @@ export function initUserFactory(userService: UserService) {
     SpacerComponent,
     TopnavComponent,
     PaymentDashboardComponent,
-    ProductDashboardComponent,
+    BrowseDashboardComponent,
     PurchaseDashboardComponent,
+    ProfileDashboardComponent,
+    MypublicationsDashboardComponent,
+    NewpublicationDashboardComponent,
+    S3UploadComponent,
+    S3UploadDirective,
 
     AppComponent,
     
   ],
+  
   imports: [
     NgbModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbSidebarModule,
     NbMenuModule,
+    NbCardModule,
+    NbCheckboxModule,
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
@@ -125,6 +136,8 @@ export function initUserFactory(userService: UserService) {
     UserService,
     ConfigService,
     StateService,
+    S3UploadService,
+
     MatIconRegistry,
     {
       'provide': APP_INITIALIZER,

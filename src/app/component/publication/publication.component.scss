@@ -1,10 +1,11 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-.example-card {
+.publication-card {
+    margin-top: 10px;
     max-width: 400px;
   }
   
-  .example-header-image {
+  .publication-header-image {
     background-image: url(https://cdn.worldvectorlogo.com/logos/fender-1.svg);
     background-size: contain;
     background-position-y: center;
@@ -12,7 +13,14 @@
     background-repeat: no-repeat;
   }
 
-  mat-card img {
+  .image-container{ 
+    widows: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    img {
+      margin-top: 0px;
     width: 100%;
     height: auto;
-  }
+    }
+}

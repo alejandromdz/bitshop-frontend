@@ -1,0 +1,27 @@
+
+.btn{
+    margin-top:10px;
+}
+ngb-progressbar ::ng-deep.progress-bar{
+    height: 100%
+}
+ngb-progressbar {
+    margin-top: 5rem;
+    
+  }
+
+  .inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile+label{
+    margin-bottom: 0px;
+}
+
+.repeater{
+    margin-top: 10px;
+}

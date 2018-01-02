@@ -1,17 +1,22 @@
 <nb-layout>
+    
   <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
+    
     <nb-sidebar-header>
-      <a href="" class="btn btn-hero-success main-btn">
+      <a class="btn btn-hero-success main-btn">
         <i class="ion ion-social-github"></i>
         <span>Bitshops</span>
       </a>
     </nb-sidebar-header>
-    <nb-menu [items]="menu"></nb-menu>
+    
+    <nb-menu [items]="menu">
+
+    </nb-menu>
+    
   </nb-sidebar>
 
-  <nb-layout-column class="main-content">
+  <nb-layout-column class="main-content" (click)="collapseSidebar()">
     <router-outlet></router-outlet>
   </nb-layout-column>
-
-
 </nb-layout>
+

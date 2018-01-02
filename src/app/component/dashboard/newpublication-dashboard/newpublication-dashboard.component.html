@@ -1,0 +1,38 @@
+<div class="newpublication-container d-flex justify-content-around">
+    <nb-card  *ngIf="!submitted">
+        <nb-card-header>
+          <h2>New Publication</h2> 
+          <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p></nb-card-header>
+        <nb-card-body>
+          
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]='publication.title' placeholder="Title">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]='publication.price' placeholder="Price">
+            </div>
+            <div class="form-group">
+                <div *ngFor="let photo of publication.photos" class="card text-center">
+                    <button type="button" class="close" aria-label="Close" (click)="remove(photo)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                      <div class="card-block">
+                          <img  [src]="photo.url" alt="Image thumbnail" class="img-thumbnail">
+                    </div>
+                  </div>
+                
+            </div>
+            <div class="form-group">
+                <s3-upload (fileUploaded)="handleFileUploaded($event)"></s3-upload>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" [(ngModel)]="publication.description" placeholder="Description"></textarea>
+            </div>
+            <button (click)="savePublication()" class="btn btn-info btn-tn">Publish</button>
+          
+        </nb-card-body>
+      </nb-card>
+
+      <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+</div>
+  

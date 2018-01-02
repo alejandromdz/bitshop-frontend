@@ -14,22 +14,11 @@ import { UserService ,AuthService} from 'app/service';
 export class LoginComponent implements OnInit {
 
   user: User;
-
   form: FormGroup;
-
-  /**
-   * Boolean used in telling the UI
-   * that the form has been submitted
-   * and is awaiting a response
-   */
   submitted = false;
-
-  /**
-   * Notification message from received
-   * form request or router
-   */
   notification: DisplayMessage;
   returnUrl: string;
+  
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(
@@ -46,7 +35,6 @@ export class LoginComponent implements OnInit {
     .subscribe((params: DisplayMessage) => {
       this.notification = params;
     });
-    // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
   
     this.form = this.formBuilder.group({

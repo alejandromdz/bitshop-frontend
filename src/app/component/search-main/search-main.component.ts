@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService, ConfigService } from 'app/service';
+import { Publication } from 'app/shared/models/publication.model';
 
 
 

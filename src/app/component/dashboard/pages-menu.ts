@@ -4,25 +4,25 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Browse',
     icon: 'nb-search',
-    link: '/',
+    link: '/dashboard/browse',
     home: true,
   },
   {
     title: 'My Info',
     icon: 'nb-person',
+    link: '/dashboard/profile'
   },
   {
     title: 'Publications',
     icon: 'nb-compose',
-    link: '/',
     children: [
       {
         title: 'My publications',
-        link: '/',
+        link: '/dashboard/mypublications',
       },
       {
         title: 'New Publication',
-        link: '/',
+        link: '/dashboard/newpublication',
       }
     ]
   },
@@ -32,12 +32,18 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'My Purchases',
-        link: '/',
+        link: '/dashboard/purchases',
       },
       {
         title: 'My Sells',
-        link: '/',
+        link: '/dashboard/payments',
       },
     ],
+  },
+  {
+    title:'Exit',
+    icon:'ion-md-exit',
+    link: '/logout'
   }
+
 ];
