@@ -30,7 +30,7 @@ export class UserService {
 
   getMyInfo() {
     return  this.apiService
-                .get(this.config.whoami_url)
+                .get(this.config.self_url)
                 .map(user => this.currentUser = user);
   }
 

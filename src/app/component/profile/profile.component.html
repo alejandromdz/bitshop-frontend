@@ -1,6 +1,10 @@
 <div class="profile-container d-flex justify-content-around">
   <nb-card>
-    <nb-card-header>Profile</nb-card-header>
+    <nb-card-header>
+
+      <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+      <h2>Profile</h2>
+    </nb-card-header>
     <nb-card-body>
       
       <div class="row">
@@ -25,10 +29,12 @@
           <label for="inputEmail">Email address</label>
           <input type="email" class="form-control" id="inputEmail" [(ngModel)]='user.email' placeholder="Email" disabled>
         </div>
-        <button type="submit" class="btn btn-info btn-tn">Save</button>
+        <button type="submit" class="btn btn-info btn-tn" (click)='saveInfo()'>Save</button>
       
     </nb-card-body>
   </nb-card>
+
+  <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
 </div>
 
 

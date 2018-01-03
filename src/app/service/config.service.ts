@@ -10,23 +10,20 @@ export class ConfigService {
   private _logout_url = this._api_url + '/logout';
   private _signup_url = this._api_url + '/signup';
   private _change_password_url = this._api_url + '/changePassword';
-  private _whoami_url = this._api_url + '/whoami';
+  private _self_url = this._api_url + '/self';
   private _users_url = this._api_url + '/user';
-  private _reset_credentials_url = this._users_url + '/reset-credentials';
   private _publications_url=this._api_url+'/publication';
+  private _self_publications_url=this.self_url+"/publication";
   private _BTC_USD_API_url='https://blockchain.info/ticker?cors=true';
 
 
-  get reset_credentials_url(): string {
-      return this._reset_credentials_url;
-  }
 
   get refresh_token_url(): string {
       return this._refresh_token_url;
   }
 
-  get whoami_url(): string {
-      return this._whoami_url;
+  get self_url(): string {
+      return this._self_url;
   }
 
   get users_url(): string {
@@ -55,5 +52,9 @@ export class ConfigService {
 
   get signup_url():string{
       return this._signup_url;
+  }
+
+  get self_publications_url():string{
+      return this._self_publications_url
   }
 }

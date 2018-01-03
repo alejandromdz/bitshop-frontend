@@ -32,70 +32,19 @@ import {
 } from '@nebular/theme';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app-routing.module';
-import {
-  DashboardComponent,
-  JumbotronComponent,
-  LandingComponent,
-  LoginComponent,
-  PageNotFoundComponent,
-  PaymentsComponent,
-  PublicationComponent,
-  ProfileComponent,
-  PurchasesComponent,
-  SearchMain,
-  SidemenuComponent,
-  SignUpComponent,
-  SpacerComponent,
-  TopnavComponent,
-  PaymentDashboardComponent,
-  BrowseDashboardComponent,
-  PurchaseDashboardComponent,
-  ProfileDashboardComponent,
-  MypublicationsDashboardComponent,
-  NewpublicationDashboardComponent,
-  S3UploadComponent,
-  S3UploadDirective
-} from './component';
-import {
-  ApiService,
-  AuthService,
-  UserService,
-  ConfigService,
-  StateService,
-  S3UploadService
-} from './service';
 import { NbMenuInternalService } from '@nebular/theme/components/menu/menu.service';
 
-export function initUserFactory(userService: UserService) {
+import * as Components from './component'
+import * as Services from './service'
+
+export function initUserFactory(userService: Services.UserService) {
     return () => userService.initUser();
 }
 
 @NgModule({
   declarations: [
-    // './component'
-    DashboardComponent,
-    JumbotronComponent,
-    LandingComponent,
-    LoginComponent,
-    PageNotFoundComponent,
-    PaymentsComponent,
-    PublicationComponent,
-    ProfileComponent,
-    PurchasesComponent,
-    SearchMain,
-    SidemenuComponent,
-    SignUpComponent,
-    SpacerComponent,
-    TopnavComponent,
-    PaymentDashboardComponent,
-    BrowseDashboardComponent,
-    PurchaseDashboardComponent,
-    ProfileDashboardComponent,
-    MypublicationsDashboardComponent,
-    NewpublicationDashboardComponent,
-    S3UploadComponent,
-    S3UploadDirective,
-
+    //...Components
+    ...Object.keys(Components).map((k) => Components[k]),
     AppComponent,
     
   ],
@@ -128,21 +77,16 @@ export function initUserFactory(userService: UserService) {
     FlexLayoutModule
   ],
   providers: [
+    //...Services
+    ...Object.keys(Services).map((k) => Services[k]),
     NbSidebarService,
     NbMenuInternalService,
     NbMenuService,
-    AuthService,
-    ApiService,
-    UserService,
-    ConfigService,
-    StateService,
-    S3UploadService,
-
     MatIconRegistry,
     {
       'provide': APP_INITIALIZER,
       'useFactory': initUserFactory,
-      'deps': [UserService],
+      'deps': [Services.UserService],
       'multi': true
     }
   ],

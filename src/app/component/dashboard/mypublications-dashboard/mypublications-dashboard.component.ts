@@ -17,7 +17,7 @@ export class MypublicationsDashboardComponent implements OnInit {
 
     ngOnInit() { 
         this.apiService
-            .get(this.config.publications_url)
+            .get(this.config.self_publications_url)
             .subscribe((response:Publication[])=>{
                 this.publications=response||[];
             })

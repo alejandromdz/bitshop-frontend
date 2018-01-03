@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import 'rxjs/add/observable/throw';
 import { serialize } from 'app/shared/utilities/serialize';
-
-export enum RequestMethod {
+ 
+enum RequestMethod {
   Get = 'GET',
   Head = 'HEAD',
   Post = 'POST',
