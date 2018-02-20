@@ -1,115 +1,96 @@
 @import 'themes';
+@import 'variables';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 @import '~@nebular/theme/styles/global/bootstrap/breakpoints';
 
+%reset-link{
+  color:$sidebar-link;
+  border-color:transparent;
+}
+
+%reset-link-hover {
+  color: $sidebar-item-hover;
+  i{
+    color: $sidebar-item-hover;
+  }
+}
+
+%reset-link-active {
+  color:$sidebar-active;
+  border-radius: 0;
+  i{
+    color: white;
+  }
+}
+
 @include nb-install-component() {
-  nb-layout-column.small {
-    flex: 0.15 !important;
+ 
+  ::ng-deep .scrollable{
+    background: $sidebar-scrollable;
+    padding-top:0;
+  }
+
+  nb-menu{
+    background: $sidebar-background;
+    
+    ::ng-deep .menu-item{
+       border:none;
+
+      a{
+        @extend %reset-link;
+      }
+      a:hover{
+       @extend %reset-link-hover;
+       background: $sidebar-background;
+      }
+      a.active{
+       @extend %reset-link-active;
+       background: $sidebar-background-active;
+      }
+    }
+
+
+  }
+
+  ::ng-deep .menu-items.expanded,::ng-deep .menu-items.collapsed{
+    background: $sidebar-scrollable;
+    
+    .menu-item{
+      background: $sidebar-scrollable!important;
+    }
+
+      a{
+        @extend %reset-link;
+      }
+     a:hover{
+      @extend %reset-link-hover;
+      background: $sidebar-scrollable!important;
+     }
+     a.active{
+      @extend %reset-link-active;
+      background: $sidebar-scrollable!important;
+     }
+   
+  
   }
 
   
-
-  nb-sidebar.menu-sidebar {
-    z-index: 1000;
-    
-    margin-top: nb-theme(sidebar-header-gap);
-    top:4rem !important;
-
-    /deep/ .main-container {
-      height:100vh !important;
-      border-top-right-radius: nb-theme(radius);
-    }
-
-    /deep/ nb-sidebar-header {
-      padding-bottom: 0.5rem;
-      text-align: center;
-    }
-    
-    background: transparent;
-    // fixed floating navigation
-    .navigation{
-      position:absolute;
-      bottom:0;
-      right:0;
-      
-    }
-
-    .main-btn {
-      padding: 0.75rem 2.5rem;
-      margin-top: -2rem;
-      font-weight: bold;
-      transition: padding 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.48);
-
-      i {
-        font-size: 1rem;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-      }
-      span {
-        padding-left: 0.25rem;
-      }
-
-      i, span {
-        vertical-align: middle;
-      }
-    }
-
-    &.compacted {
-
-      /deep/ nb-sidebar-header {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      .main-btn {
-        width: 46px;
-        height: 44px;
-        padding: 0.375rem;
-        border-radius: 5px;
-        transition: none;
-
-        span {
-          display: none;
-        }
-      }
-    }
-    
-  }
-
-  @include media-breakpoint-down(xs) {
-    .main-content {
-      padding: 0.75rem !important;
-
-    }
-  }
-
-   @include media-breakpoint-down(sm) {
-
-    nb-sidebar.menu-sidebar {
-      z-index: 1000;
-
-      margin-top: 0;
-
-      /deep/ .main-container {
-        height: 100vh !important;
-        border-top-right-radius: 0;
-
-        .scrollable {
-          padding-top: 0;
-        }
-      }
-    }
-
-    .main-btn {
-      display: none;
-    }
-  }
 }
+
+
+
+
 
  // solved overlapping issue between the sidebar and the content
  @include media-breakpoint-up(md) {
   nb-sidebar.fixed{
       position:static;
+      top:0!important;
     }
   }
+  nb-sidebar{
+  top: 65px!important;
+  }
 
+ 

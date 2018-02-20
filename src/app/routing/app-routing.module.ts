@@ -2,18 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {
   DashboardComponent,
-  JumbotronComponent,
   LandingComponent,
   LoginComponent,
   PageNotFoundComponent,
   PaymentsComponent,
-  ProfileComponent,
   PurchasesComponent,
-  SearchMain,
-  SidemenuComponent,
   SignUpComponent,
-  SpacerComponent,
-  TopnavComponent,
   PaymentDashboardComponent,
   BrowseDashboardComponent,
   PurchaseDashboardComponent,

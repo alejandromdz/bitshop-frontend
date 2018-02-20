@@ -3,7 +3,7 @@
 
 .section {
     
-    font-family: Lato;
+    font-family: $font-stack ;
 }
 .section-type-one {
     @extend .section;

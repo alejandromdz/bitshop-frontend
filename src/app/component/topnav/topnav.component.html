@@ -1,12 +1,12 @@
 <nav class="navbar sticky-top navbar-toggleable-sm navbar-light bs-topnav">
-  <button class="navbar-toggler navbar-toggler-right"  (click)="toggleSidebar()" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  <button class="navbar-toggler navbar-toggler-right" (click)="toggleSidebar()" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
 
   <div class="conversion-container">
-    <a routerLink="/" class="navbar-brand">
+    <a routerLink="/" class="navbar-brand hidden-xs-down">
       bit-shops
     </a>
     <div class="conversion">
@@ -20,22 +20,26 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item" *ngIf="!loggedIn()">
-        <a class="nav-link" routerLink="signup">
+    <ul class="navbar-nav ml-auto" [ngClass]="{'login-hide': loggedIn()}">
+      <li class="nav-item hidden-sm-up" routerLink="/" *ngIf="!loggedIn()">
+        <a class="nav-link" href="/" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <i class="fa fa-home icon hidden-md-up" aria-hidden="true"></i>
+          <b>Home</b>
+        </a>
+      </li>
+
+      <li class="nav-item" routerLink="signup" *ngIf="!loggedIn()">
+        <a class="nav-link" href="/signup" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <i class="fa fa-user icon hidden-md-up" aria-hidden="true"></i>
           <b>Sign Up</b>
         </a>
       </li>
-      <li class="nav-item" *ngIf="!loggedIn()">
-        <a class="nav-link" routerLink="login">
+      <li class="nav-item" routerLink="login" *ngIf="!loggedIn()">
+        <a class="nav-link" href="/login" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <i class="fa fa-lock icon hidden-md-up" aria-hidden="true"></i>
           <b>Log In</b>
         </a>
       </li>
-<!--       <li class="nav-item" *ngIf="loggedIn()">
-        <button mat-button class="nav-link" (click)="logOut()">
-          <b>Log Out</b>
-        </button>
-      </li> -->
     </ul>
   </div>
 </nav>

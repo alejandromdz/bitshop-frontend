@@ -2,6 +2,9 @@
   <mat-card *ngIf="!submitted">
     <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
     <h2 class="login-header">Login</h2>
+    <div class="login-icon">
+      <i class="nb-locked"></i>
+    </div>
     <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
       <mat-input-container class="full-width">
         <input matInput formControlName="username" required placeholder="username">
@@ -15,7 +18,7 @@
         </div>
       </div>
     </form>
-    
+
   </mat-card>
   <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
 </div>

@@ -3,6 +3,7 @@ import { NgModule, APP_INITIALIZER} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import {
   MatButtonModule,
   MatMenuModule,
@@ -14,8 +15,10 @@ import {
   MatInputModule,
   MatIconRegistry,
   MatProgressSpinnerModule,
-  MatListModule
+  MatListModule,
+  MatDialogModule
 } from '@angular/material';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -74,7 +77,9 @@ export function initUserFactory(userService: Services.UserService) {
     MatCardModule,
     MatProgressSpinnerModule,
     MatListModule,
-    FlexLayoutModule
+    MatDialogModule,
+    FlexLayoutModule,
+    NgxQRCodeModule
   ],
   providers: [
     //...Services
@@ -90,6 +95,7 @@ export function initUserFactory(userService: Services.UserService) {
       'multi': true
     }
   ],
+  entryComponents: [Components.BuyDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

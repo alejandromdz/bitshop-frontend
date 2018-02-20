@@ -1,7 +1,7 @@
 <mat-card class="publication-card">
   <mat-card-header>
     <div mat-card-avatar class="publication-header-image"></div>
-    <mat-card-title>{{publication.title}}</mat-card-title>
+    <mat-card-title>{{publication.title|uppercase}}</mat-card-title>
     <mat-card-subtitle>{{publication.price|currency:'USD'}}</mat-card-subtitle>
   </mat-card-header>
 
@@ -16,7 +16,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button>LIKE</button>
+    <button mat-button (click)='openDialog()'>BUY</button>
     <button mat-button>SHARE</button>
   </mat-card-actions>
 </mat-card>

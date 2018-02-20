@@ -1,29 +1,32 @@
 <div class="signup-container">
-    <mat-card *ngIf="!submitted">
-      <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
-    
-      <h2 class="signup-header">
-        Sign Up
-      </h2>
-    
-      <mat-form-field class="full-width">
-        <input matInput [(ngModel)]="newUser.username" placeholder="Username">
-      </mat-form-field>
-     
-      
-      <mat-form-field class="full-width">
-        <input matInput [(ngModel)]="newUser.email" autocomplete="false" placeholder="Email">
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <input matInput [(ngModel)]="newUser.password" autocomplete="new-password" type="password" placeholder="Password">
-      </mat-form-field>
-      
-      <div class="clearfix">
-        <div class="float-right">
-          <button  class="signup-button" (click)="doSignUp()" color="primary" mat-raised-button>Sign Up</button>
-        </div>
+  <mat-card *ngIf="!submitted">
+    <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
+
+    <h2 class="signup-header">
+      Sign Up
+    </h2>
+    <div class="signup-icon">
+      <span class="nb-person"></span>
+    </div>
+
+    <mat-form-field class="full-width">
+      <input matInput [(ngModel)]="newUser.username" placeholder="Username">
+    </mat-form-field>
+
+
+    <mat-form-field class="full-width">
+      <input matInput [(ngModel)]="newUser.email" autocomplete="false" placeholder="Email">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput [(ngModel)]="newUser.password" autocomplete="new-password" type="password" placeholder="Password">
+    </mat-form-field>
+
+    <div class="clearfix">
+      <div class="float-right">
+        <button class="signup-button" (click)="doSignUp()" color="primary" mat-raised-button>Sign Up</button>
       </div>
-      
-    </mat-card>
-    <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
-  </div>
+    </div>
+
+  </mat-card>
+  <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
+</div>

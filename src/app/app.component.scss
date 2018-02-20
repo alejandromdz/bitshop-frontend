@@ -1,2 +1,10 @@
 
 
+.app-container{
+    display:flex;
+    flex-direction: column;
+}
+.app-page{
+    padding-top: 65px;
+    width:100%;
+}

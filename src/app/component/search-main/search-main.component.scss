@@ -20,10 +20,13 @@ $searchWidth:250px;
   display:flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center 
+  align-items: center; 
+  padding:10px;
   publication{
     flex-grow: 1;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

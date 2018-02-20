@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{ data.publication.title }}</h1>
+<div mat-dialog-content>
+  <p>You are about to buy this product, please scan this code in your Bitcoin wallet </p>
+  <ngx-qrcode 
+  [qrc-value] = "'bitcoin:1NpWBCdKbCmEz1UBVjmqVnQhvv61ssfWnD?amount=0.01&label=Luke-Jr&message=Donation%20for%20project%20xyz'"
+  qrc-class = "aclass"
+  qrc-errorCorrectionLevel = "L">
+  </ngx-qrcode>
+  <mat-form-field>
+    <input matInput>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button cdkFocusInitial>Ok</button>
+</div>

@@ -1,12 +1,12 @@
 @import 'variables';
-@import url('https://fonts.googleapis.com/css?family=Lato');
+
 
 $carousel-count: 5;
 $carousel-height:45px;
-$carousel-width:200px;
+$carousel-width:220px;
 .app-jumbotron {
     min-height: 100vh;
-    background-image: url('/assets/img/AviaPark_Moscow.jpeg');
+    background-image: url('/assets/img/AviaPark_Moscow.jpg');
     background-size: auto 140%;
     background-position-x: center;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ $carousel-width:200px;
     text-align: center;
     padding: 10px;
     h1.center{
-    font-family: Lato;
+    font-family:  $font-jumbotron;
     }
 }
 
@@ -32,7 +32,7 @@ $carousel-width:200px;
     position:relative;
     margin:0 auto;
     display:inline-flex;
-    border:white 3px dashed;
+    border:$carousel-dash 3px dashed;
     ul
     {
         list-style-type: none;

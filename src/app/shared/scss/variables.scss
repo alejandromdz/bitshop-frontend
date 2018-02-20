@@ -1,12 +1,16 @@
 
-
-$font-stack:    Helvetica, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+$font-stack: 'Open Sans', sans-serif;
+$font-jumbotron:  'Oxygen', sans-serif;
+$carousel-dash:#9573d0;
 $btc-chip:#e09a35;
 $conversion-text-color:#CDDC39;
 $primary-color: rgba(75, 99, 111, 0.95);
 $primary-light: #E8EAF6;
 $custom-entry:#2196F3;
 
+$auth-background:#4c8098;
 $form-gradient-1:#e2ff08;
 $form-gradient-2:#33a0ff;
 $form-button:#292b2c;
@@ -15,6 +19,12 @@ $blue-dark: #26404c;
 $search-color-1 : #e2ff08;
 $search-color-2 : #88980f;
 
+$sidebar-background:black;
+$sidebar-background-active:#212121;
+$sidebar-active:#ffd740;
+$sidebar-item-hover:#dadfe6;
+$sidebar-scrollable:#3d3e42;
+$sidebar-link:#8d8d8e;
 
 
 

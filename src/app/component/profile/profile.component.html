@@ -1,11 +1,11 @@
 <div class="profile-container d-flex justify-content-around">
-  <nb-card>
-    <nb-card-header>
+  <mat-card>
+    <mat-card-title>
 
       <p [class]="notification.msgType" *ngIf="notification">{{notification.msgBody}}</p>
       <h2>Profile</h2>
-    </nb-card-header>
-    <nb-card-body>
+    </mat-card-title>
+    <mat-card-content>
       
       <div class="row">
         <div class="col-sm-6">
@@ -31,8 +31,8 @@
         </div>
         <button type="submit" class="btn btn-info btn-tn" (click)='saveInfo()'>Save</button>
       
-    </nb-card-body>
-  </nb-card>
+    </mat-card-content>
+  </mat-card>
 
   <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner>
 </div>
