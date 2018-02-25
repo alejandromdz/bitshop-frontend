@@ -11,7 +11,7 @@ export class S3UploadService {
     public managedUploads = [];
     public XHRRequestState = 'READY';
 
-    private _s3dataendpoint: string = 'https://hb5xoj5n7k.execute-api.us-west-1.amazonaws.com/v1/'; // see ApiExampleResponse.js.
+    private _s3dataendpoint: string = 'https://hb5xoj5n7k.execute-api.us-west-1.amazonaws.com/v1/'; 
     private _tag = 'S3Upload';
     private _policy: Policy;
     private _endpoint = '';

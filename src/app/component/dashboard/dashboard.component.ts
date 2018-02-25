@@ -39,9 +39,7 @@ export class DashboardComponent implements OnInit,OnDestroy{
    $('body').removeAttr('class');
    $('body').removeAttr('style');
   }
-
- 
-
+  
   collapseSidebar(){
     if(this.currentBreakpoint.width<BreakpointSizes.md)
     this.sidebarService.collapse('menu-sidebar')

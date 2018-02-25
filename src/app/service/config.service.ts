@@ -15,6 +15,7 @@ export class ConfigService {
   private _publications_url=this._api_url+'/publication';
   private _self_publications_url=this.self_url+"/publication";
   private _BTC_USD_API_url='https://blockchain.info/ticker?cors=true';
+  private _BTC_address_service='https://n03u3txun2.execute-api.us-west-1.amazonaws.com/v1/';
 
 
 
@@ -55,6 +56,10 @@ export class ConfigService {
   }
 
   get self_publications_url():string{
-      return this._self_publications_url
+      return this._self_publications_url;
+  }
+
+  get BTC_address_service():string{
+      return this._BTC_address_service;
   }
 }

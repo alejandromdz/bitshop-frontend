@@ -4,7 +4,6 @@ export * from './jumbotron/jumbotron.component';
 export * from './login/login.component';
 export * from './landing/landing.component';
 export * from './page-not-found/page-not-found.component';
-export * from './payments/payments.component';
 export * from './profile/profile.component';
 export * from './publication/publication.component';
 export * from './publication/buyDialog.component';

@@ -5,7 +5,6 @@ import {
   LandingComponent,
   LoginComponent,
   PageNotFoundComponent,
-  PaymentsComponent,
   PurchasesComponent,
   SignUpComponent,
   PaymentDashboardComponent,
