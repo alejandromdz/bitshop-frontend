@@ -198,7 +198,7 @@ export class S3UploadService {
                 if (!response.xAmzBucket)
                     throw new Error('Bucket wasn\'t returned from API call. You must return an S3 bucket in' + this._tag);
                 this._policy = new Policy(response);
-                this._endpoint = 'http://' + response.xAmzBucket + '.s3.amazonaws.com/';
+                this._endpoint = 'https://' + response.xAmzBucket + '.s3.amazonaws.com/';
             },
             errorResponse => { throw new Error('Unable to grab credentials in ' + this._tag); }
             );

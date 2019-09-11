@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, AuthService, ApiService, ConfigService } from 'app/service';
+import { UserService, AuthService, ApiService, ConfigService, BictoinService } from 'app/service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {MatChipList,MatChip} from '@angular/material'
 import { NbSidebarService } from '@nebular/theme';
@@ -18,15 +18,15 @@ export class TopnavComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private apiService: ApiService,
+    private bitcoinService: BictoinService,
     private config: ConfigService,
     private sidebarService:NbSidebarService
   ) { }
   ngOnInit() {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    this.apiService.get(this.config.BTC_USD_API_url,null,{wihCredentials:false}).subscribe((json:any)=>{
-      if(json.USD&&json.USD.buy)
-      this.BTC_USD=json.USD.buy;
-    
+
+    this.bitcoinService.BTC_USD.subscribe((data)=>{
+      this.BTC_USD=data.BTC_USD;
     })
   }
 

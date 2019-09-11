@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   submitted = false;
   notification: DisplayMessage;
   returnUrl: string;
-  user: User={firstname:'', lastname:'',username:'',email:''};
+  user: User={firstname:'', lastname:'',username:'',email:'',telephone:'',address:''};
 
   constructor(
     private apiService: ApiService,

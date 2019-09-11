@@ -11,7 +11,7 @@ import { Subject } from 'rxjs/Subject';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent {
-  newUser:User={email:'',firstname:'',lastname:'',password:'',username:''};
+  newUser:User={email:'',firstname:'',lastname:'',password:'',username:'',telephone:'',address:''};
   submitted = false;
   notification: DisplayMessage;
   returnUrl: string;

@@ -2,7 +2,6 @@ import { Component ,OnDestroy, OnInit} from '@angular/core';
 import { MENU_ITEMS } from './pages-menu';
 import * as $ from 'jquery';
 import { NbSidebarService, NbThemeService,  NbMediaBreakpoint } from '@nebular/theme';
-import { StateService } from 'app/service';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { BreakpointSizes } from 'app/shared/models'
@@ -17,12 +16,10 @@ import { Breakpoints } from '@angular/cdk/layout/typings/breakpoints';
 export class DashboardComponent implements OnInit,OnDestroy{
   currentBreakpoint:NbMediaBreakpoint
   collapsed:boolean;
-  sidebar: any = {};
   menu = MENU_ITEMS;
 
   constructor( 
     private sidebarService:NbSidebarService,
-    private stateService:StateService,
     protected themeService: NbThemeService,
   ){}
 
